@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>От Диера</title>
+    <title>Приглашение для любимой Мамы</title>
     <style>
         :root {
-            --glass-bg: rgba(255, 255, 255, 0.25);
-            --glass-border: rgba(255, 255, 255, 0.4);
-            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-            --accent-color: #007AFF;
-            --accent-hover: #0056b3;
-            --text-main: #1c1c1e;
+            --glass-bg: rgba(255, 255, 255, 0.35);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --glass-shadow: 0 8px 32px 0 rgba(255, 154, 162, 0.2);
+            --accent-color: #ff6b81;
+            --accent-hover: #ff4757;
+            --text-main: #2d3436;
         }
 
         * {
@@ -24,7 +24,7 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -33,7 +33,6 @@
             position: relative;
         }
 
-        /* Плавающие фоновые фигуры для эффекта стекла */
         .bg-blob {
             position: absolute;
             border-radius: 50%;
@@ -42,18 +41,18 @@
             animation: float 10s infinite alternate ease-in-out;
         }
         .blob-1 {
-            width: 250px;
-            height: 250px;
+            width: 260px;
+            height: 260px;
             background: #ff9a9e;
-            top: 10%;
-            left: 10%;
+            top: 5%;
+            left: 5%;
         }
         .blob-2 {
-            width: 300px;
-            height: 300px;
-            background: #a1c4fd;
-            bottom: 10%;
-            right: 10%;
+            width: 320px;
+            height: 320px;
+            background: #fecfef;
+            bottom: 5%;
+            right: 5%;
         }
 
         @keyframes float {
@@ -61,7 +60,6 @@
             100% { transform: translate(30px, 30px) scale(1.1); }
         }
 
-        /* Основной контейнер Liquid Glass */
         .card {
             position: relative;
             z-index: 1;
@@ -76,25 +74,34 @@
             box-shadow: var(--glass-shadow);
         }
 
+        .header-subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #636e72;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
         h1 {
             text-align: center;
             color: var(--text-main);
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
             margin-bottom: 24px;
             letter-spacing: -0.5px;
         }
 
         .section-title {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
-            color: #48484a;
+            color: #4b6584;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Выбор даты и времени */
         .datetime-group {
             display: flex;
             gap: 12px;
@@ -103,8 +110,8 @@
 
         .input-glass {
             flex: 1;
-            background: rgba(255, 255, 255, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.7);
             border-radius: 16px;
             padding: 12px 14px;
             font-size: 15px;
@@ -114,11 +121,10 @@
         }
 
         .input-glass:focus {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85);
             border-color: var(--accent-color);
         }
 
-        /* Сетка мест */
         .places-grid {
             display: flex;
             flex-wrap: wrap;
@@ -127,10 +133,10 @@
         }
 
         .chip {
-            background: rgba(255, 255, 255, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             border-radius: 20px;
-            padding: 8px 14px;
+            padding: 9px 14px;
             font-size: 14px;
             font-weight: 500;
             color: var(--text-main);
@@ -140,18 +146,17 @@
         }
 
         .chip:hover {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.65);
         }
 
         .chip.selected {
             background: var(--accent-color);
             color: white;
             border-color: var(--accent-color);
-            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(255, 107, 129, 0.35);
             transform: scale(1.02);
         }
 
-        /* Текстовое поле */
         textarea.input-glass {
             width: 100%;
             height: 90px;
@@ -159,7 +164,6 @@
             margin-bottom: 24px;
         }
 
-        /* Кнопки */
         .buttons-group {
             display: flex;
             gap: 12px;
@@ -170,7 +174,7 @@
             padding: 14px;
             border-radius: 18px;
             border: none;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -179,7 +183,7 @@
         .btn-primary {
             background: var(--accent-color);
             color: white;
-            box-shadow: 0 4px 14px rgba(0, 122, 255, 0.3);
+            box-shadow: 0 4px 14px rgba(255, 107, 129, 0.35);
         }
 
         .btn-primary:hover {
@@ -187,16 +191,15 @@
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.4);
-            color: #3a3a3c;
+            background: rgba(255, 255, 255, 0.45);
+            color: #57606f;
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.65);
         }
 
-        /* Финальный экран результатов */
         .result-screen {
             display: none;
             text-align: center;
@@ -210,10 +213,11 @@
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 16px;
+            color: var(--text-main);
         }
 
         .result-item {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.4);
             border-radius: 14px;
             padding: 12px;
             margin-bottom: 10px;
@@ -223,7 +227,7 @@
 
         .result-item span {
             font-weight: 600;
-            color: #48484a;
+            color: #747d8c;
             display: block;
             margin-bottom: 4px;
             font-size: 13px;
@@ -236,38 +240,35 @@
     <div class="bg-blob blob-2"></div>
 
     <div class="card">
-        <!-- Форма -->
         <div id="form-screen">
-            <h1>От Диера</h1>
+            <div class="header-subtitle">Приглашение</div>
+            <h1>Для любимой Мамы 🌸</h1>
 
-            <div class="section-title">Когда?</div>
+            <div class="section-title">Выбери удобный день и время:</div>
             <div class="datetime-group">
                 <input type="date" id="dateInput" class="input-glass">
                 <input type="time" id="timeInput" class="input-glass">
             </div>
 
-            <div class="section-title">Куда?</div>
+            <div class="section-title">Куда отправимся?</div>
             <div class="places-grid" id="placesGrid">
-                <div class="chip" data-place="📚 Библиотека">📚 Библиотека</div>
-                <div class="chip" data-place="🌳 Президентский парк">🌳 Президентский парк</div>
-                <div class="chip" data-place="🚶 Прогулка по городу">🚶 Прогулка по городу</div>
-                <div class="chip" data-place="🕌 Ходжа Ахмет Ясауи">🕌 Ходжа Ахмет Ясауи</div>
-                <div class="chip" data-place="🌿 Эко-парк">🌿 Эко-парк</div>
-                <div class="chip" data-place="☕ Кофейня">☕ Кофейня</div>
-                <div class="chip" data-place="⛪ Церковь">⛪ Церковь</div>
-                <div class="chip" data-place="🎬 Кино">🎬 Кино</div>
+                <div class="chip" data-place="☕ Уютное кафе">☕ Уютное кафе</div>
+                <div class="chip" data-place="🍕 Семейный ресторан">🍕 Семейный ресторан</div>
+                <div class="chip" data-place="🌳 Прогулка в парке">🌳 Прогулка в парке</div>
+                <div class="chip" data-place="🎭 Театр / Концерт">🎭 Театр / Концерт</div>
+                <div class="chip" data-place="🛍️️ Совместный шопинг">🛍️ Совместный шопинг</div>
+                <div class="chip" data-place="🍰 Домашний уютный вечер">🍰 Домашний вечер</div>
             </div>
 
-            <div class="section-title">Комментарий</div>
-            <textarea id="commentInput" class="input-glass" placeholder="Ваши пожелания или комментарии..."></textarea>
+            <div class="section-title">Пожелания или комментарии</div>
+            <textarea id="commentInput" class="input-glass" placeholder="Напиши, что захватить или куда бы ты хотела зайти..."></textarea>
 
             <div class="buttons-group">
-                <button class="btn btn-primary" onclick="submitForm(true)">Договорились ♡</button>
-                <button class="btn btn-secondary" onclick="submitForm(false)">Не получится</button>
+                <button class="btn btn-primary" onclick="submitForm(true)">С удовольствием! 💖</button>
+                <button class="btn btn-secondary" onclick="submitForm(false)">Выберу другой день</button>
             </div>
         </div>
 
-        <!-- Экран с подтверждением -->
         <div id="result-screen" class="result-screen">
             <div id="result-content"></div>
         </div>
@@ -277,7 +278,6 @@
         const BOT_TOKEN = '8661747024:AAFnK4oqN3_birAz3WV7cWOZpilyNrlJQUc';
         const CHAT_ID = '8157788321';
 
-        // Переключение подсветки мест
         document.querySelectorAll('.chip').forEach(chip => {
             chip.addEventListener('click', () => {
                 chip.classList.toggle('selected');
@@ -294,7 +294,7 @@
                     text: messageText,
                     parse_mode: 'HTML'
                 })
-            }).catch(err => console.log('Ошибка отправки:', err));
+            }).catch(err => console.log('Ошибка:', err));
         }
 
         function submitForm(accepted) {
@@ -311,39 +311,37 @@
 
             if (accepted) {
                 if (!date || !time) {
-                    alert('Пожалуйста, выберите дату и время!');
+                    alert('Мамуль, выбери, пожалуйста, дату и время! ❤️');
                     return;
                 }
                 if (selectedPlaces.length === 0) {
-                    alert('Пожалуйста, выберите хотя бы одно место!');
+                    alert('Выбери хотя бы одно место! ✨');
                     return;
                 }
 
-                // Отправляем в Telegram
-                const tgText = `✨ <b>Откликнулись: Договорились! ♡</b>\n\n` +
+                const tgText = `🌸 <b>Мама приняла приглашение!</b> 💖\n\n` +
                     `📅 <b>Дата:</b> ${date}\n` +
                     `⏰ <b>Время:</b> ${time}\n` +
-                    `📍 <b>Места:</b>\n${selectedPlaces.map(p => `• ${p}`).join('\n')}\n` +
-                    (comment ? `💬 <b>Комментарий:</b> ${comment}` : '');
+                    `📍 <b>Выбранные варианты:</b>\n${selectedPlaces.map(p => `• ${p}`).join('\n')}\n` +
+                    (comment ? `💬 <b>Пожелания:</b> ${comment}` : '');
                 
                 sendTelegramNotification(tgText);
 
-                // Показываем подтверждение
                 resultContent.innerHTML = `
-                    <div class="result-title">Договорились! ♡</div>
+                    <div class="result-title">Ура! Жду с нетерпением! 💖</div>
                     <div class="result-item"><span>Дата и время</span>${date} в ${time}</div>
-                    <div class="result-item"><span>Выбранные места</span>${selectedPlaces.join(', ')}</div>
-                    ${comment ? `<div class="result-item"><span>Комментарий</span>${comment}</div>` : ''}
+                    <div class="result-item"><span>Планируем</span>${selectedPlaces.join(', ')}</div>
+                    ${comment ? `<div class="result-item"><span>Заметка</span>${comment}</div>` : ''}
                 `;
             } else {
-                const tgText = `💔 <b>Откликнулись: Не получится</b>\n` + 
+                const tgText = `🌺 <b>Мама попросила выбрать другой день</b>\n` + 
                     (comment ? `💬 <b>Комментарий:</b> ${comment}` : '');
                 
                 sendTelegramNotification(tgText);
 
                 resultContent.innerHTML = `
-                    <div class="result-title">Ничего страшного!</div>
-                    <p style="color: #48484a; font-size: 15px;">Спасибо за ответ. В другой раз обязательно получится! ✨</p>
+                    <div class="result-title">Понял, подстроимся! 🌸</div>
+                    <p style="color: #57606f; font-size: 15px;">Ничего страшного, обязательно выберем другой удобный день!</p>
                 `;
             }
 
